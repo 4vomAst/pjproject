@@ -60,11 +60,13 @@ if(WITH_SSL)
 endif()
 
 if(WITH_BUILTIN_OPENSSL)
+  message("CMAKE_CURRENT_BINARY_DIR: ${CMAKE_CURRENT_BINARY_DIR}")
   include_directories(BEFORE SYSTEM
 #   ../../third_party
 #   ../../third_party/openssl
 #   ../../third_party/openssl/include
-	${CMAKE_CURRENT_BINARY_DIR}/../third_party/build/openssl/openssl/include)
+	${CMAKE_CURRENT_BINARY_DIR}/../../third_party/build/openssl/openssl/include
+    ${CMAKE_CURRENT_BINARY_DIR}/../../../third_party/build/openssl/openssl/include)
 #	${CMAKE_CURRENT_BINARY_DIR}/third_party/build/openssl/openssl/crypto)
 endif()
 
